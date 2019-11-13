@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Train Tracker</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body> 
+    <div class="jumbotron">
+        <h1 class="display-4 text-center"><strong>TRAIN SCHEDULE!</strong></h1>
+    </div>
+    <div class="container">
+    <table class="table text-center">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Frequency</th>
+            <th scope="col">Next Arrival</th>
+            <th scope="col">Minutes Away</th>
+          </tr>
+        </thead>
+        <tbody id= "information">
+
+        </tbody>
+    </table>
+
+    <form>
+        <div class="form-group">
+            <label for="name-input">Name</label>
+            <input type="text" class="form-control" id="name-input" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+            <label for="place-input">Destination</label>
+            <input type="text" class="form-control" id="place-input">
+        </div>
+        <div class="form-group">
+            <label for="time-input">First Train (military time)</label>
+            <input type="text" class="form-control" id="time-input">
+        </div>
+        <div class="form-group">
+            <label for="often-input">Frequency</label>
+            <input type="text" class="form-control" id="often-input">
+        </div>
+        <button type="submit" class="btn btn-primary" id="add-train">Submit</button>
+        </form>
+    </div>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+
+<!--Add SDKs for Firebase products that you want to use-->
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script> 
+
+<script src="javascript/app.js"></script>
+
+</body>
+</html>
