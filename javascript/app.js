@@ -45,7 +45,7 @@ $("#add-train").on("click", function(event){
 //take data from firebase and add it to the table 
 dbase.ref().on("child_added", function(snapshot){
     $("#information").prepend("<tr><td>" + snapshot.val().name + "</td><td>" + snapshot.val().place + "</td><td>" + snapshot.val().often + "</td><td>" + snapshot.val().time + "</td>");
-});
+// });
 
 //time stuff
 var randomDate = "03/19/1995";
@@ -75,6 +75,9 @@ console.log("minutesAway", minutesAway);
 var nextArrival = moment().add(minutesAway, "minutes");
 console.log("nextArrival", nextArrival);
 
-// var newRow = $("<tr id='remove'>").append {
+//Add minutes away
+// $("<td>").prepend(minutesAway)
 
-// }
+}, function (errorObject) {
+    console.log("Errors handled: " + errorObject.code);
+});
