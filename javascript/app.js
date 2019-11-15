@@ -44,7 +44,37 @@ $("#add-train").on("click", function(event){
 
 //take data from firebase and add it to the table 
 dbase.ref().on("child_added", function(snapshot){
-    $("#information").prepend("<tr><td>" + snapshot.val().name + "</td><td>" + snapshot.val().place + "</td><td>" + snapshot.val().time + "</td><td>" + snapshot.val().often + "</td>");
-})
+    $("#information").prepend("<tr><td>" + snapshot.val().name + "</td><td>" + snapshot.val().place + "</td><td>" + snapshot.val().often + "</td><td>" + snapshot.val().time + "</td>");
+});
 
-//time things
+//time stuff
+var randomDate = "03/19/1995";
+var randomFormat = "MM/DD/YYYY";
+var convertedDate = moment(randomDate, randomFormat);
+
+var firstTrainTimeConverted = moment(firstTrainTime, "HH:mm").subtract(1, "years");
+console.log(firstTrainTimeConverted);
+
+//Current time
+var currentTime = moment();
+console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+
+//Difference between times
+var diffTime = moment().diff(moment(firstTrainTimeConverted), "minutes");
+console.log("DIFFERENCE IN TIME: " + diffTime);
+
+//Remainder
+var remainder = diffTime % frequency;
+console.log(remainder);
+
+//Minutes until next train
+var minutesAway = frequency - remainder;
+console.log("minutesAway", minutesAway);
+
+//Next train
+var nextArrival = moment().add(minutesAway, "minutes");
+console.log("nextArrival", nextArrival);
+
+// var newRow = $("<tr id='remove'>").append {
+
+// }
