@@ -5,3 +5,11 @@ h1 {
 body { 
     background-color: pink!important;
 }
+
+.jumbotron {
+    margin: 35px 65px 0px 65px;
+}
+
+.container {
+    margin-bottom: 50px;
+}
